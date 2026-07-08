@@ -1,0 +1,34 @@
+h1{
+    margin-left: 40px;
+    color : rgb(0, 0, 0);
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two-thirds for GPS, one-third for box */
+    height: 100vh; /* Full viewport height */
+}
+.gps {
+    background-color: #dfedf7; /* Light blue background */
+    padding: 20px;
+    border-right: 2px solid #aaa; /* Optional: Separate visually */
+}
+.box {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px;
+    border-left: 2px solid #aaa; /* Optional: Separate visually */
+}
+.gps {
+    background-color: #d0e6f7;
+    padding: 0; /* Remove padding to make the map full-screen in the GPS section */
+}
+
+#map {
+    width: 100%;
+    height: 100%; /* Full height of the GPS section */
+}

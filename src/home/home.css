@@ -1,0 +1,152 @@
+/* Modern Professional Disc Golf Home App Styles */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.basket-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    background: linear-gradient(135deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 12px;
+}
+
+.header-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.header-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    padding: 24px;
+}
+
+/* Home Content */
+.home-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    /* Flex alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Ensure it doesn't get too wide on desktop */
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto; /* Centers the box itself */
+}
+
+/* New Menu Container */
+.action-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between buttons */
+    width: 100%;
+    max-width: 500px; /* Controls how wide the buttons stretch */
+    margin-top: 30px;
+}
+
+/* The Wide Buttons */
+.menu-btn {
+    width: 100%;
+    height: 50px; /* slightly taller than 40px for better clickability */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+    /* Green Gradient Theme */
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Optional: Different style for "Coming Soon" features */
+.menu-btn.secondary {
+    background: white;
+    border: 2px solid #10b981;
+    color: #059669;
+}
+
+.menu-btn.secondary:hover {
+    background: #f0fdf4;
+}

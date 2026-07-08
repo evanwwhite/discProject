@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Golf Website</title>
+    <link rel="stylesheet" href="map.css">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.0/papaparse.min.js"></script>
+    <!--<script defer src="map.js"></script> -->
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <img src="../data/discGolfBasket.svg" alt="Disc Golf Basket" class="basket-icon">
+            <h1>BIRDIE FINDER</h1>
+        </div>
+        
+        <div class="header-buttons">
+            <button id="home-btn">Home</button>
+            <button id="disc-map-btn">Disc Map</button>
+            <button id="shop-btn">Shop</button> 
+        </div>
+
+    </header>
+    
+    <div class="container">
+        
+        <!-- GPS Section -->
+        <div class="gps">
+            <h2>GPS Section</h2>
+            <div id="map" style="height: 100%;"></div>
+        </div>
+
+        <!-- Box Section -->
+        <div class="box">
+            <h1>Courses Nearby:</h1>
+            <p>Top responses sorted by distance to you (Top 30)</p>
+            
+            <!-- Search bar -->
+            <input type="text" id="search-bar" placeholder="Search courses..." />
+            
+            <div id="course-list">
+                <!-- Course cards will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <button id="close-sidebar">Close</button>
+            <div id="sidebar-content">
+                <!-- Content will be dynamically added here -->
+            </div>
+        </div>
+
+        <div id="play-sidebar" class="play-sidebar">
+            <button id="close-play-sidebar">Close</button>
+            <div id="play-sidebar-content">
+                <!-- Play sidebar content will be dynamically added here -->
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>     
+    <script src="map.js"></script>
+</body>
+</html>

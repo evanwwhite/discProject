@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Golf Website - Shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.0/papaparse.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <img src="../data/discGolfBasket.svg" alt="Disc Golf Basket" class="basket-icon">
+            <h1>BIRDIE FINDER</h1>
+        </div>
+        
+        <div class="header-buttons">
+            <button id="home-btn">Home</button>
+            <button id="disc-map-btn">Disc Map</button>
+            <button id="shop-btn">Shop</button> 
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Shop content area -->
+        <div class="shop-content">
+    
+            <div class="shop-header-group">
+                <h2>Disc Golf Shop</h2>
+                <p>Welcome to our disc golf shop! Browse our selection of discs from various manufacturers.</p>
+            </div>
+            
+            <div class="filter-row">
+                <div class="filter-item">
+                    <label for="manufacturer-filter">Manufacturer:</label>
+                    <select id="manufacturer-filter"><option value="">All</option></select>
+                </div>
+        
+                <div class="filter-item">
+                    <label for="use-filter">Use:</label>
+                    <select id="use-filter"><option value="">All</option></select>
+                </div>
+        
+                <div class="filter-item">
+                    <label for="stability-filter">Stability:</label>
+                    <select id="stability-filter"><option value="">All</option></select>
+                </div>
+        
+                <div class="filter-item">
+                    <label for="speed-filter">Speed:</label>
+                    <select id="speed-filter"><option value="">All</option></select>
+                </div>
+        
+                <div class="filter-item">
+                    <label for="glide-filter">Glide:</label>
+                    <select id="glide-filter"><option value="">All</option></select>
+                </div>
+            </div>
+        
+            <input type="text" id="search-bar" placeholder="Search for discs..." />
+        
+            <div id="disc-list" class="disc-list"></div>
+        </div>
+    </div>
+
+    <script src="shop.js"></script>
+</body>
+</html>

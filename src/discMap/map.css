@@ -1,0 +1,677 @@
+/* Modern Professional Disc Golf Map App Styles */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.basket-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    background: linear-gradient(135deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 12px;
+}
+
+.header-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.header-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    height: calc(100vh - 70px);
+}
+
+/* GPS/Map Section */
+.gps {
+    position: relative;
+    background: #f8fafc;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+
+/* Course List Section */
+.box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    overflow-y: auto;
+    max-height: 100%;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar */
+#search-bar {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Course Cards */
+.course-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.course-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.course-card p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.course-card button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+}
+
+.course-card button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Hidden Course Cards */
+.hidden-course-card {
+    background: #f8fafc;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.hidden-course-card:hover {
+    opacity: 1;
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hidden-course-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.hidden-course-card p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: -450px;
+    width: 450px;
+    height: calc(100vh - 70px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 800;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+#close-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+#close-sidebar:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+#sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 30px 30px;
+}
+
+#sidebar-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#sidebar-content p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 8px 0;
+    text-align: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 12px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.sidebar-button {
+    display: inline-block;
+    padding: 12px 40px;
+    margin: 16px 8px 0 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    min-width: 140px;
+}
+
+.sidebar-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Play Sidebar */
+.play-sidebar {
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.play-sidebar.active {
+    right: 0;
+}
+
+#close-play-sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+#close-play-sidebar:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+#play-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 30px 30px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+#play-sidebar-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#play-sidebar-content p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #64748b;
+    margin: 10px 0;
+    text-align: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+/* Player Boxes */
+.player-box {
+    width: 280px;
+    height: 100px;
+    background: white;
+    border-radius: 16px;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e2e8f0;
+    position: relative;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.player-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    border-color: #10b981;
+}
+
+.player-box p {
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+}
+
+.player-box p:first-child {
+    font-size: 1.1rem;
+    color: #10b981;
+}
+
+.player-box p:last-child {
+    font-size: 1rem;
+    margin-top: 8px;
+    color: #64748b;
+}
+
+/* Player Buttons */
+.player-buttons {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+}
+
+.player-buttons .sidebar-button {
+    flex: 1;
+    max-width: 150px;
+    padding: 12px 20px;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Stroke Controls */
+.stroke-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    margin-left: auto;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.stroke-btn {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #10b981;
+    background: white;
+    color: #10b981;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.stroke-btn:hover {
+    background: #10b981;
+    color: white;
+    transform: scale(1.1);
+}
+
+.stroke-count {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #10b981;
+    min-width: 24px;
+    text-align: center;
+}
+
+/* Hole Progress Indicator */
+.hole-progress {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 2px solid #10b981;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hole-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #10b981, #059669);
+    transition: width 0.5s ease;
+    z-index: 1;
+}
+
+.hole-progress h3 {
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.hole-progress .hole-number {
+    color: #10b981;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.hole-progress .total-holes {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 4px 0 0 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Progress bar animation */
+.hole-progress.progress-1::before { width: 10%; }
+.hole-progress.progress-2::before { width: 20%; }
+.hole-progress.progress-3::before { width: 30%; }
+.hole-progress.progress-4::before { width: 40%; }
+.hole-progress.progress-5::before { width: 50%; }
+.hole-progress.progress-6::before { width: 60%; }
+.hole-progress.progress-7::before { width: 70%; }
+.hole-progress.progress-8::before { width: 80%; }
+.hole-progress.progress-9::before { width: 90%; }
+.hole-progress.progress-10::before { width: 100%; }
+.hole-progress.progress-11::before { width: 100%; }
+.hole-progress.progress-12::before { width: 100%; }
+.hole-progress.progress-13::before { width: 100%; }
+.hole-progress.progress-14::before { width: 100%; }
+.hole-progress.progress-15::before { width: 100%; }
+.hole-progress.progress-16::before { width: 100%; }
+.hole-progress.progress-17::before { width: 100%; }
+.hole-progress.progress-18::before { width: 100%; }
+.hole-progress.progress-19::before { width: 100%; }
+.hole-progress.progress-20::before { width: 100%; }
+.hole-progress.progress-21::before { width: 100%; }
+.hole-progress.progress-22::before { width: 100%; }
+.hole-progress.progress-23::before { width: 100%; }
+.hole-progress.progress-24::before { width: 100%; }
+.hole-progress.progress-25::before { width: 100%; }
+.hole-progress.progress-26::before { width: 100%; }
+.hole-progress.progress-27::before { width: 100%; }
+.hole-progress.progress-28::before { width: 100%; }
+.hole-progress.progress-29::before { width: 100%; }
+.hole-progress.progress-30::before { width: 100%; }
+.hole-progress.progress-31::before { width: 100%; }
+.hole-progress.progress-32::before { width: 100%; }
+.hole-progress.progress-33::before { width: 100%; }
+.hole-progress.progress-34::before { width: 100%; }
+.hole-progress.progress-35::before { width: 100%; }
+.hole-progress.progress-36::before { width: 100%; }
+
+/* Hole change animation */
+.hole-change {
+    animation: holeChange 0.6s ease-in-out;
+}
+
+@keyframes holeChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Final Scores */
+.final-scores {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    padding: 24px;
+    border-radius: 16px;
+    margin: 20px 0;
+    border: 2px solid #10b981;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+}
+
+.final-scores h3 {
+    color: #10b981;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.final-scores pre {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #2c3e50;
+    margin: 0;
+    white-space: pre-wrap;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Scrollbar Styling */
+.box::-webkit-scrollbar,
+#play-sidebar-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.box::-webkit-scrollbar-track,
+#play-sidebar-content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.box::-webkit-scrollbar-thumb,
+#play-sidebar-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 4px;
+}
+
+.box::-webkit-scrollbar-thumb:hover,
+#play-sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+    
+    .sidebar,
+    .play-sidebar {
+        width: 100%;
+        left: -100%;
+        right: -100%;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .play-sidebar.active {
+        right: 0;
+    }
+}
